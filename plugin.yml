@@ -1,0 +1,13 @@
+name: bFlight
+main: com.bradsproject.BradleyJewell.bFlight.bFlight
+version: 0.2.1
+description: Provides vehicle flight for Bukkit.
+authors:
+  - Brad811
+commands:
+  bfly:
+    description: Toggles whether the player's vehicles fly or not.
+    usage: /<command>
+  bgive:
+    description: Gives all materials necessary for flying.
+    usage: /<command>
