@@ -1,6 +1,6 @@
 name: bFlight
 main: com.bradsproject.BradleyJewell.bFlight.bFlight
-version: 0.2.1
+version: 0.3
 description: Provides vehicle flight for Bukkit.
 authors:
   - Brad811
