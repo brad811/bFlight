@@ -13,10 +13,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.PluginManager;
 
-import org.bukkit.plugin.Plugin;
-
-import com.nijiko.permissions.PermissionHandler;
-import com.nijikokun.bukkit.Permissions.Permissions;
+import org.anjocaido.groupmanager.permissions.AnjoPermissionsHandler;
 
 /**
  * bFlight for Bukkit
@@ -29,7 +26,7 @@ public class bFlight extends JavaPlugin
 	private final bFlightVehicleListener vehicleListener = new bFlightVehicleListener(this);
 	final HashMap<Player, Boolean> active = new HashMap<Player, Boolean>();
 	
-	public static PermissionHandler Permissions = null;
+	public static AnjoPermissionsHandler Permissions = null;
 	
 	public void onEnable()
 	{
@@ -38,8 +35,6 @@ public class bFlight extends JavaPlugin
 		pm.registerEvent(Event.Type.PLAYER_LOGIN, playerListener, Priority.Normal, this);
 		pm.registerEvent(Event.Type.VEHICLE_DAMAGE, vehicleListener, Priority.Normal, this);
 		pm.registerEvent(Event.Type.PLAYER_INTERACT, playerListener, Priority.Normal, this);
-		
-		setupPermissions();
 		
 		// EXAMPLE: Custom code, here we just output some info so we can check
 		// all is well
@@ -78,22 +73,6 @@ public class bFlight extends JavaPlugin
 		} else
 		{
 			player.sendMessage("You are no longer flying!");
-		}
-	}
-	
-	public void setupPermissions()
-	{
-		Plugin test = this.getServer().getPluginManager().getPlugin("Permissions");
-		
-		if(bFlight.Permissions == null)
-		{
-			if(test != null)
-			{
-				bFlight.Permissions = ((Permissions) test).getHandler();
-			} else
-			{
-				
-			}
 		}
 	}
 	
